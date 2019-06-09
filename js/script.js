@@ -98,11 +98,23 @@ function Helper(){
       })
     }
  
- 
+    methods.initToggleMenuResponsive = function (){
+      $(".btn_toggle_nav").click(function(){
+        $(this).toggleClass("active");
+        $(".menu_main_level_01").toggleClass("open");
+      })
+    }
+    // methods.initToggleSubMenuResponsive = function(){
+    //   $("..menu_main .menu_main_level_01 .menu_main_item").click(function(){
+     
+    //     $(this).next().toggleClass("open");
+    //   })
+    // }
     //Khai báo tất cả methods tại đây
     methods.init = function(){
       methods.initSlickCustomerVoice();
       methods.initAccordionFooterMenu();
+      methods.initToggleMenuResponsive();
     }
     return methods;
 }

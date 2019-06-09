@@ -2,6 +2,12 @@
 	display: none;
 }
 @media screen and (max-width:400px){
+	*, *::before, *::after{
+		box-sizing: border-box;
+	}
+		/* html.touch *:hover, body.touch *:hover {
+			pointer-events: none !important;
+	} */
 	body{
 		font-size: 14vw;
 	}
@@ -23,20 +29,79 @@
 	}
 	/*Header*/
 	.header{
-		position: relative;
+	
 	}
 	.header .header_center{
 		display: block;
-		padding: 40px 0;
+		padding: 20px 0;
+		position: relative;
 	}
 	.btn_toggle_nav {
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: 10px;
+		padding: 5px;
+		color: #fff;
+		background: #009899;
+		border-radius: 0;
+	}
+	.btn_toggle_nav .icon-bar{
+		background: #fff;
+		width: 100%;
+	}
+	.btn_toggle_nav.active .icon-bar-top{
+		opacity: 1;
+		transform: translateX(3px) rotate(30deg);
+		transform-origin: 10% 10%;
+		transition: all 0.5s ease;
+		visibility: visible;
+	}
+	.btn_toggle_nav.active .icon-bar-mid{
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease;
+	}
+	.btn_toggle_nav.active .icon-bar-bottom{
+		transform: translateX(3px) rotate(-30deg);
+		transform-origin: 10% 90%;
+		opacity: 1;
+		visibility: visible;
+		transition: all 0.5s ease;
+	}
+	.header .header_center .logo{
+		width: auto;
+		float: none;
 	}
 	/*Menu main*/
-	.menu_main{
+	/* .menu_main{
 		display: none;
+	} */
+	.menu_main_level_01{
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease;
+	}
+	.menu_main_level_01.open{
+		opacity: 1;
+		visibility: visible;
+		transition: all 0.5s ease;
+	}
+	.menu_main .menu_main_level_01 .menu_main_item{
+		width: 100%;
+		border-bottom: solid 1px #B1B1B2;
+	}
+
+	
+	.menu_main .menu_main_level_01 .menu_main_item.has_sub::before{
+		top:50%;
+		right: 0;
+		left:auto;
+	}
+
+	.menu_main .menu_main_level_01 .menu_main_item .menu_main_level_02.open{
+		opacity: 1;
+    	visibility: visible;
+    	transition: all 0.5s ease-in-out;
 	}
 	/*Banner*/
 	.section_banner_index{
@@ -266,6 +331,9 @@
 	}
 }
 @media screen and (min-width:401px) and (max-width: 750px) {
+	*, *::before, *::after{
+		box-sizing: border-box;
+	}
 	body{
 		font-size: 14vw;
 	}
@@ -285,13 +353,77 @@
 	.ttl_section_01{
 		font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (750 - 300)));
 	}
-	/*Header*/
-	.header{
-		
+	.header .header_center{
+		display: block;
+		padding: 20px 0;
+		position: relative;
+	}
+	.btn_toggle_nav {
+		position: absolute;
+		right: 0;
+		top: 10px;
+		padding: 5px;
+		color: #fff;
+		background: #009899;
+		border-radius: 0;
+	}
+	.btn_toggle_nav .icon-bar{
+		background: #fff;
+		width: 100%;
+	}
+	.btn_toggle_nav.active .icon-bar-top{
+		opacity: 1;
+		transform: translateX(3px) rotate(30deg);
+		transform-origin: 10% 10%;
+		transition: all 0.5s ease;
+		visibility: visible;
+	}
+	.btn_toggle_nav.active .icon-bar-mid{
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease;
+	}
+	.btn_toggle_nav.active .icon-bar-bottom{
+		transform: translateX(3px) rotate(-30deg);
+		transform-origin: 10% 90%;
+		opacity: 1;
+		visibility: visible;
+		transition: all 0.5s ease;
+	}
+	.header .header_center .logo{
+		width: auto;
+		float: none;
 	}
 	/*Menu main*/
-	.menu_main{
+	/* .menu_main{
 		display: none;
+	} */
+	.menu_main_level_01{
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease;
+	}
+	.menu_main_level_01.open{
+		opacity: 1;
+		visibility: visible;
+		transition: all 0.5s ease;
+	}
+	.menu_main .menu_main_level_01 .menu_main_item{
+		width: 100%;
+		border-bottom: solid 1px #B1B1B2;
+	}
+
+	
+	.menu_main .menu_main_level_01 .menu_main_item.has_sub::before{
+		top:50%;
+		right: 0;
+		left:auto;
+	}
+
+	.menu_main .menu_main_level_01 .menu_main_item .menu_main_level_02.open{
+		opacity: 1;
+    	visibility: visible;
+    	transition: all 0.5s ease-in-out;
 	}
 	/*Banner*/
 	.section_banner_index{
