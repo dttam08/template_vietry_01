@@ -73,22 +73,26 @@
 		float: none;
 	}
 	/*Menu main*/
-	/* .menu_main{
+	/* .menu_main_level_01{
 		display: none;
 	} */
-	.menu_main_level_01{
+
+	.menu_main_level_01 {
+		height: 0;
 		opacity: 0;
 		visibility: hidden;
-		transition: all 0.5s ease;
+	
 	}
-	.menu_main_level_01.open{
-		opacity: 1;
+	.menu_main_level_01.open {
+		height: 100%;
 		visibility: visible;
-		transition: all 0.5s ease;
+		opacity: 1;
+		transition: all 0.5s linear;
 	}
 	.menu_main .menu_main_level_01 .menu_main_item{
 		width: 100%;
 		border-bottom: solid 1px #B1B1B2;
+		margin: 0;
 	}
 
 	
@@ -97,11 +101,37 @@
 		right: 0;
 		left:auto;
 	}
-
-	.menu_main .menu_main_level_01 .menu_main_item .menu_main_level_02.open{
+	.menu_main .menu_main_level_01 .menu_main_item.open .menu_main_level_02{
 		opacity: 1;
-    	visibility: visible;
-    	transition: all 0.5s ease-in-out;
+		visibility: visible;
+	}
+	.menu_main .menu_main_level_01 .menu_main_item .menu_main_level_02{
+		top: 50px;
+		position: absolute;
+	}
+
+	.menu_main .menu_main_level_01 .menu_main_item.has_sub.open .menu_main_level_02{
+		position: relative;
+		top:0;
+		transition: unset;
+	}
+	.menu_main .menu_main_level_01 .menu_main_item.has_sub.open::before{
+		position: absolute;
+		right: 0;
+		left: auto;
+		top: 27px;
+	}
+	.menu_main .menu_main_level_01>.menu_main_item>.menu_main_item_content{
+		border: 0;
+		padding: 15px;
+		transform: unset;
+	}
+	.menu_main .menu_main_level_01 .menu_main_item>.menu_main_item_content>.menu_main_item_text{
+		transform: unset;
+		display: block;
+	}
+	.menu_main .menu_main_level_01 .menu_main_item .menu_main_level_02{
+		transition: unset;
 	}
 	/*Banner*/
 	.section_banner_index{
@@ -179,6 +209,10 @@
 	/*section customer voice*/
 	.section_customer_voice{
 		clear: both;
+	}
+	.box_customer_voice .img-slick .slick-slider-item.slick-slide {
+		width: unset!important;
+		margin: 0 20px;
 	}
 	/*section_customer_voice*/
 	.section_customer_voice .box_customer_voice .img-slick .slick-slider-item::before,.section_customer_voice .box_customer_voice .img-slick .slick-slider-item::after{
@@ -401,6 +435,7 @@
 	.menu_main_level_01{
 		opacity: 0;
 		visibility: hidden;
+		height: 0;
 		transition: all 0.5s ease;
 	}
 	.menu_main_level_01.open{
@@ -419,12 +454,28 @@
 		right: 0;
 		left:auto;
 	}
-
-	.menu_main .menu_main_level_01 .menu_main_item .menu_main_level_02.open{
+	
+	
+	 /* .menu_main .menu_main_level_01 .menu_main_item.sub_menu .menu_main_level_02{
+		position: relative;
+		top: 0;
+		opacity: 0;
+		visibility: hidden;
+	} */
+	/*hide show sub menu*/
+	/* .menu_main .menu_main_level_01 .menu_main_item.has_sub .menu_main_level_02{
+		opacity: 0;
+		visibility: hidden;
+	}
+	.menu_main .menu_main_level_01 .menu_main_item.has_sub:hover .menu_main_level_02.open{
+		opacity: 0!important;
+		visibility: hidden!important;
+	} */
+	/* .menu_main .menu_main_level_01 .menu_main_item.sub_menu.open .menu_main_level_02{
 		opacity: 1;
     	visibility: visible;
     	transition: all 0.5s ease-in-out;
-	}
+	}  */
 	/*Banner*/
 	.section_banner_index{
 		display: none;

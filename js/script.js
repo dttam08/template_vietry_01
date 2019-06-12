@@ -53,7 +53,7 @@ function Helper(){
           slidesToScroll: 1,
           prevArrow: false,
           nextArrow: false,
-          variableWidth: true,
+        
           centerMode: true,
           responsive: [
             {
@@ -78,7 +78,10 @@ function Helper(){
                 dots: false,
                 infinite: false,
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                infinite: true,
+                variableWidth: false,
+                centerMode: true,
               }
             }
             // You can unslick at a given breakpoint now by adding:
@@ -101,20 +104,33 @@ function Helper(){
     methods.initToggleMenuResponsive = function (){
       $(".btn_toggle_nav").click(function(){
         $(this).toggleClass("active");
+        var menu = $(".menu_main .menu_main_level_01 .menu_main_item");
+      
+       
+    
         $(".menu_main_level_01").toggleClass("open");
+        //Cách 2: $(".menu_main_level_01").slideToggle(500);
+        menu.removeClass("open");
       })
     }
-    // methods.initToggleSubMenuResponsive = function(){
-    //   $("..menu_main .menu_main_level_01 .menu_main_item").click(function(){
-     
-    //     $(this).next().toggleClass("open");
-    //   })
-    // }
+    methods.initToggleSubMenuResponsive = function(){
+      $(".menu_main .menu_main_level_01 .menu_main_item.has_sub.has_sub_hover").click(function(){
+        // var x = $(".menu_main .menu_main_level_01 .menu_main_item:hover .menu_main_level_02");
+        // if(x.hasClass("open")){
+        //   x.removeClass("open");
+        // }
+       if ($(window).width() <= 320) {
+        $(this).removeClass("has_sub_hover");
+        $(this).toggleClass("open");
+        } 
+      })
+    }
     //Khai báo tất cả methods tại đây
     methods.init = function(){
       methods.initSlickCustomerVoice();
       methods.initAccordionFooterMenu();
       methods.initToggleMenuResponsive();
+      methods.initToggleSubMenuResponsive();
     }
     return methods;
 }
