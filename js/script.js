@@ -48,7 +48,7 @@ function Helper(){
           dots: false,
           infinite: true,
           speed: 300,
-          autoplay:false,
+          autoplay:true,
           slidesToShow: 4,
           slidesToScroll: 1,
           prevArrow: false,
@@ -56,24 +56,8 @@ function Helper(){
         
           centerMode: true,
           responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: false
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll:1
-              }
-            },
-            {
-              breakpoint: 400,
+           {
+              breakpoint: 640,
               settings: {
                 dots: false,
                 infinite: false,
