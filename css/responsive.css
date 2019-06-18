@@ -515,7 +515,6 @@
 		float: none;
 	}
 	/*Menu main*/
-	/*Menu main*/
 	.menu_main_level_01 {
 		height: 0;
 		opacity: 0;
@@ -572,20 +571,6 @@
 	.menu_main .menu_main_level_01 .menu_main_item .menu_main_level_02{
 		transition: unset;
 	}
-	/*hide show sub menu*/
-	.menu_main .menu_main_level_01 .menu_main_item.has_sub .menu_main_level_02{
-		opacity: 0;
-		visibility: hidden;
-	}
-	.menu_main .menu_main_level_01 .menu_main_item.has_sub:hover .menu_main_level_02.open{
-		opacity: 0!important;
-		visibility: hidden!important;
-	} 
-	.menu_main .menu_main_level_01 .menu_main_item.sub_menu.open .menu_main_level_02{
-		opacity: 1;
-    	visibility: visible;
-    	transition: all 0.5s ease-in-out;
-	} 
 	/*Banner*/
 	.section_banner_index{
 		background-image: unset;

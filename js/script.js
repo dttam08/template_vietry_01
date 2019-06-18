@@ -103,7 +103,7 @@ function Helper(){
         // if(x.hasClass("open")){
         //   x.removeClass("open");
         // }
-       if ($(window).width() <= 320) {
+       if ($(window).width() <= 750) {
         $(this).removeClass("has_sub_hover");
         $(this).toggleClass("open");
         } 
